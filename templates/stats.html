@@ -1,0 +1,55 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>URL Shortner</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      width: 40%;
+      border: 1px solid #ddd;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 5px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  </style>
+  <link rel="shortcut icon" type="image/png" href="../static/img/favicon.png">
+</head>
+
+<body>
+  <div>
+    <div style="position: relative; left: 12%">
+      <h1>Statistics Of WebSite</h1>
+    </div>
+    <div>
+      <table>
+        <tr>
+          <th>Original URL</th>
+          <th>Short URL</th>
+          <th>Visits</th>
+        </tr>
+
+        {% for link in links %}
+        <tr>
+          <td>{{ link.original_url }}</td>
+          <td>
+            {{ url_for('short.redirected_to_url', short_url = link.short_url,
+              _external = True) }}
+          </td>
+          <td>{{ link.visits }}</td>
+          {% endfor %}
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>
