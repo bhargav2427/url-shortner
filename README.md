@@ -5,4 +5,4 @@
 - 3 Digits which are added at last are Case Sensitive and as per requirements we can change length 3 to any integer.
 - A stats page show all url and visits through shorten url.
 - Authentication is made.
-- To install dependencies try 'pip install requirments.txt'
+- To install dependencies try <code>pip install requirments.txt</code>
